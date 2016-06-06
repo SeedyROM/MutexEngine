@@ -14,6 +14,7 @@ class Entity;
 //
 // Component class to be used by the entity system as a way of organizing functionality!
 //
+
 class Component {
 public:
     
@@ -30,9 +31,8 @@ public:
     // Run at deallocation to clean up and free memory.
     virtual void destroy() {}
     
-    
     //
-    // Constant returning functions to determine class name/type.
+    // Constant returning function to determine class name/type.
     //
     
     // Function used to dynamically defer the derived class name.
