@@ -1,0 +1,17 @@
+//
+//  PrefixHeader.pch
+//  MutexEngine
+//
+//  Created by Zack Kollar on 6/6/16.
+//  Copyright © 2016 Mutex12. All rights reserved.
+//
+
+#pragma once
+
+#include <iostream>
+#include <string>
+
+#include <SFML/Audio.hpp>
+#include <SFML/Graphics.hpp>
+
+#include "ResourcePath.hpp"

@@ -13,9 +13,12 @@
 		1461466C1D04E57E002CEBBD /* nice_music.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 1461466B1D04E57E002CEBBD /* nice_music.ogg */; };
 		1461466E1D04E57E002CEBBD /* sansation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1461466D1D04E57E002CEBBD /* sansation.ttf */; };
 		146146701D04E57E002CEBBD /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1461466F1D04E57E002CEBBD /* icon.png */; };
+		146146781D04E5C9002CEBBD /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 146146761D04E5C9002CEBBD /* Entity.cpp */; };
+		1461467B1D04E65A002CEBBD /* Component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 146146791D04E65A002CEBBD /* Component.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1444FEC91D052E9600BF1617 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		1461465E1D04E57E002CEBBD /* MutexEngine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MutexEngine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		146146621D04E57E002CEBBD /* MutexEngine-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MutexEngine-Info.plist"; sourceTree = "<group>"; };
 		146146631D04E57E002CEBBD /* ResourcePath.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
@@ -25,6 +28,10 @@
 		1461466B1D04E57E002CEBBD /* nice_music.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = nice_music.ogg; sourceTree = "<group>"; };
 		1461466D1D04E57E002CEBBD /* sansation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sansation.ttf; sourceTree = "<group>"; };
 		1461466F1D04E57E002CEBBD /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		146146761D04E5C9002CEBBD /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
+		146146771D04E5C9002CEBBD /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
+		146146791D04E65A002CEBBD /* Component.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Component.cpp; sourceTree = "<group>"; };
+		1461467A1D04E65A002CEBBD /* Component.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Component.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +64,14 @@
 		146146601D04E57E002CEBBD /* MutexEngine */ = {
 			isa = PBXGroup;
 			children = (
-				146146631D04E57E002CEBBD /* ResourcePath.mm */,
+				1444FEC91D052E9600BF1617 /* PrefixHeader.pch */,
 				146146651D04E57E002CEBBD /* ResourcePath.hpp */,
+				146146631D04E57E002CEBBD /* ResourcePath.mm */,
 				146146661D04E57E002CEBBD /* main.cpp */,
+				146146771D04E5C9002CEBBD /* Entity.h */,
+				146146761D04E5C9002CEBBD /* Entity.cpp */,
+				1461467A1D04E65A002CEBBD /* Component.h */,
+				146146791D04E65A002CEBBD /* Component.cpp */,
 				146146681D04E57E002CEBBD /* Resources */,
 				146146611D04E57E002CEBBD /* Supporting Files */,
 			);
@@ -173,6 +185,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				146146671D04E57E002CEBBD /* main.cpp in Sources */,
+				1461467B1D04E65A002CEBBD /* Component.cpp in Sources */,
+				146146781D04E5C9002CEBBD /* Entity.cpp in Sources */,
 				146146641D04E57E002CEBBD /* ResourcePath.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +291,8 @@
 		146146741D04E57E002CEBBD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MutexEngine/PrefixHeader.pch";
 				INFOPLIST_FILE = "MutexEngine/MutexEngine-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -286,6 +302,8 @@
 		146146751D04E57E002CEBBD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MutexEngine/PrefixHeader.pch";
 				INFOPLIST_FILE = "MutexEngine/MutexEngine-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -311,6 +329,7 @@
 				146146751D04E57E002CEBBD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
