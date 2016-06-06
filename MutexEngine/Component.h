@@ -13,8 +13,14 @@ class Entity;
 class Component {
 public:
     // Virtual functions to be overriden.
-    virtual void initialize(Entity &entity) {}
-    virtual void update(Entity &entity) {}
-    virtual void destroy(Entity &entity) {}
+    virtual void initialize() {}
+    virtual void update(Entity &e) { std::cout << getComponentName() << "\n"; }
+    virtual void destroy() {}
     const std::string getComponentName() const;
+};
+
+class TestComponent : public Component {
+    void update(Entity &e) {
+        std::cout << getComponentName() << "\n";
+    }
 };

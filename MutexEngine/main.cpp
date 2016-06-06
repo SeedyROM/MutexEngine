@@ -39,6 +39,8 @@ int main(int, char const**)
 
         window.clear();
         
+        e.update();
+        
         window.display();
     }
 

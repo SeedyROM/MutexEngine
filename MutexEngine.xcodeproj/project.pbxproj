@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		146146641D04E57E002CEBBD /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 146146631D04E57E002CEBBD /* ResourcePath.mm */; };
 		146146671D04E57E002CEBBD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 146146661D04E57E002CEBBD /* main.cpp */; };
-		1461466A1D04E57E002CEBBD /* cute_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 146146691D04E57E002CEBBD /* cute_image.jpg */; };
 		1461466C1D04E57E002CEBBD /* nice_music.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 1461466B1D04E57E002CEBBD /* nice_music.ogg */; };
 		1461466E1D04E57E002CEBBD /* sansation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1461466D1D04E57E002CEBBD /* sansation.ttf */; };
 		146146701D04E57E002CEBBD /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1461466F1D04E57E002CEBBD /* icon.png */; };
@@ -24,7 +23,6 @@
 		146146631D04E57E002CEBBD /* ResourcePath.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
 		146146651D04E57E002CEBBD /* ResourcePath.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ResourcePath.hpp; sourceTree = "<group>"; };
 		146146661D04E57E002CEBBD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		146146691D04E57E002CEBBD /* cute_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cute_image.jpg; sourceTree = "<group>"; };
 		1461466B1D04E57E002CEBBD /* nice_music.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = nice_music.ogg; sourceTree = "<group>"; };
 		1461466D1D04E57E002CEBBD /* sansation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sansation.ttf; sourceTree = "<group>"; };
 		1461466F1D04E57E002CEBBD /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
@@ -89,7 +87,6 @@
 		146146681D04E57E002CEBBD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				146146691D04E57E002CEBBD /* cute_image.jpg */,
 				1461466B1D04E57E002CEBBD /* nice_music.ogg */,
 				1461466D1D04E57E002CEBBD /* sansation.ttf */,
 				1461466F1D04E57E002CEBBD /* icon.png */,
@@ -157,7 +154,6 @@
 				146146701D04E57E002CEBBD /* icon.png in Resources */,
 				1461466E1D04E57E002CEBBD /* sansation.ttf in Resources */,
 				1461466C1D04E57E002CEBBD /* nice_music.ogg in Resources */,
-				1461466A1D04E57E002CEBBD /* cute_image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,10 +287,14 @@
 		146146741D04E57E002CEBBD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MutexEngine/PrefixHeader.pch";
 				INFOPLIST_FILE = "MutexEngine/MutexEngine-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-O3",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -302,10 +302,14 @@
 		146146751D04E57E002CEBBD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MutexEngine/PrefixHeader.pch";
 				INFOPLIST_FILE = "MutexEngine/MutexEngine-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-O3",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

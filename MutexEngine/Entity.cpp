@@ -9,7 +9,8 @@
 #include "Entity.h"
 
 Entity::Entity() {
-    addComponent(TransformComponent(0, 0, 0));
+    addComponent(new Component());
+    addComponent(new TestComponent());
 }
 
 void Entity::addComponent(Component *t) {
