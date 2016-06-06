@@ -11,7 +11,7 @@
 // Get unique ID for component type.
 const std::string Component::getComponentName() const {
     std::string frameName = typeid(*this).name();
-    // If specific GCC versions remove stack/frame value from className
+    // If specific GCC versions remove stack/frame value from className.
     frameName.erase(std::remove_if(frameName.begin(), frameName.end(), &isdigit), frameName.end());
     return frameName;
 }
